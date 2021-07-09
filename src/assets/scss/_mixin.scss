@@ -1,0 +1,20 @@
+// 動畫
+%transition {
+    transition: all 0.3s ease-in-out;
+}
+// 手指
+%hand {
+    cursor: pointer;
+}
+
+@mixin scrollbar($x, $y, $open: touch) {
+    overflow-x: $x;
+    overflow-y: $y;
+    -webkit-overflow-scrolling: $open;
+}
+// juc 預設值 flex-start 、 align-items 預設值 stretch
+@mixin d_f($flex, $ai: stretch, $jc: flex-start) {
+    display: $flex;
+    align-items: $ai;
+    justify-content: $jc;
+}

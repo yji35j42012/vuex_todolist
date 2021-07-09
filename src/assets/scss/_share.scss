@@ -1,0 +1,214 @@
+#app {
+	width: 100%;
+	height: 100%;
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+}
+
+#nav {
+	width: 100%;
+	padding: 30px;
+	a {
+		font-weight: bold;
+		color: #2c3e50;
+
+		&.router-link-exact-active {
+			color: #42b983;
+		}
+	}
+}
+
+.d_flex {
+	display: flex;
+	&._aic {
+		align-items: center;
+	}
+	&._juc {
+		justify-content: center;
+	}
+}
+
+.todobox {
+	overflow: hidden;
+	width: 50%;
+	height: 100%;
+	max-height: 700px;
+	margin: auto;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #ccc;
+}
+.function {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 50%;
+	height: 50px;
+	margin: auto;
+	padding: 0 10px;
+}
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 50%;
+	height: 50px;
+	margin: auto;
+	padding: 0 10px;
+}
+.tb_body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: calc(100% - 100px);
+}
+.normal_tb {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	th {
+		height: 50px;
+		background-color: #6c7ae0;
+		color: #fff;
+	}
+	td {
+		height: 50px;
+		background-color: #fff;
+	}
+	tr:nth-child(even) td {
+		background-color: #f8f6ff;
+	}
+}
+
+.normal_check {
+	span {
+		position: relative;
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		border: 1px solid #000;
+		border-radius: 3px;
+		@extend %hand;
+		&::after {
+			content: "";
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 2px;
+			width: 8px;
+			height: 15px;
+			margin: auto;
+			border-style: solid;
+			border-color: #000;
+			border-width: 0 1px 1px 0;
+			transform: rotate(45deg);
+		}
+	}
+	input[type="checkbox"] {
+		display: none;
+	}
+	input[type="checkbox"]:checked ~ span:after {
+		display: inline-block;
+	}
+}
+.normal_select {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	max-width: 180px;
+	height: 30px;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 3px;
+	@extend %hand;
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		margin-left: 0.255em;
+		vertical-align: 0.255em;
+		content: "";
+		transform: translateY(-50%);
+		border-top: 0.3em solid;
+		border-right: 0.3em solid transparent;
+		border-bottom: 0;
+		border-left: 0.3em solid transparent;
+	}
+	select {
+		width: 100%;
+		height: 100%;
+		padding: 0 10px;
+		@extend %hand;
+	}
+}
+.normal_search {
+	@include d_f(inline-flex, center, flex-start);
+	max-width: 180px;
+	height: 30px;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 3px;
+	input {
+		min-width: 100px;
+		height: 100%;
+		padding: 0 10px;
+	}
+}
+.normal_input {
+	width: 100%;
+	max-width: 180px;
+	height: 30px;
+	padding: 0 10px;
+	background-color: #fff;
+	border: 1px solid #ced4da;
+	border-radius: 3px;
+}
+.normal_btn {
+	height: 30px;
+	padding: 0 10px;
+	background-color: map-get($btn_style, warning_bg);
+	border-radius: 3px;
+	@extend %transition;
+	@extend %hand;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+.icon_btn {
+	width: 30px;
+	height: 30px;
+	font-size: 22px;
+	border-radius: 3px;
+	// box-shadow: 0 2px 2px #000;
+	@extend %transition;
+	&:hover {
+		opacity: 0.7;
+	}
+	@extend %hand;
+	&._edit {
+		background-color: map-get($btn_style, primary_bg);
+		color: #fff;
+	}
+	&._del {
+		background-color: map-get($btn_style, danger_bg);
+		color: #fff;
+	}
+	&._add,
+	&._done {
+		background-color: map-get($btn_style, ok_bg);
+		color: #fff;
+	}
+	& + & {
+		margin-left: 10px;
+	}
+}
+
+.count {
+	&::before {
+		content: "筆數:";
+	}
+}
