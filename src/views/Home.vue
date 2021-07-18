@@ -6,17 +6,8 @@
                 <option value="active">Active</option>
                 <option value="complete">Complete</option>
             </select>
-            <!-- <ul class="function_state">
-                <li>All</li>
-                <li>Active</li>
-                <li>Done</li>
-            </ul> -->
         </label>
         <input type="text" class="normal_input" v-model="addContent" />
-        <!-- <label class="normal_search" v-else>
-            <input type="text" />
-            <i class="material-icons"> search </i>
-        </label> -->
         <button class="icon_btn _add material-icons" @click="addHandler()">
             post_add
         </button>
@@ -43,54 +34,6 @@
                     @complete="(value) => completeHandler(item.tId, value)"
                     @delete="deleteHandler(item.tId)"
                 ></TodoItem>
-                <!-- <tr>
-                    <td width="20%">
-                        <label class="normal_check">
-                            <input type="checkbox" />
-                            <span></span>
-                        </label>
-                    </td>
-                    <td width="20%">
-                        2021.07.16
-                    </td>
-                    <td width="40%">
-                        aaaaa
-                    </td>
-                    <td width="20%">
-                        <div class="d_flex _aic _juc">
-                            <button class="icon_btn _edit material-icons">
-                                edit
-                            </button>
-                            <button class="icon_btn _del material-icons">
-                                delete
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="20%">
-                        <label class="normal_check">
-                            <input type="checkbox" />
-                            <span></span>
-                        </label>
-                    </td>
-                    <td width="20%">
-                        2021.07.16
-                    </td>
-                    <td width="40%">
-                        aaaaa
-                    </td>
-                    <td width="20%">
-                        <div class="d_flex _aic _juc">
-                            <button class="icon_btn _edit material-icons">
-                                edit
-                            </button>
-                            <button class="icon_btn _del material-icons">
-                                delete
-                            </button>
-                        </div>
-                    </td>
-                </tr> -->
             </table>
         </div>
     </div>
